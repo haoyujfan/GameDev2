@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy7mjgydimk1t"]
+
+[ext_resource type="PackedScene" uid="uid://c4y6w6bhvjmn6" path="res://wall.tscn" id="1_cxrqm"]
+
+[node name="box" type="Node3D"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -50, 2.08165e-12)
+light_color = Color(1, 0.823529, 0.933333, 1)
+light_energy = 16.0
+omni_range = 4096.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, -6.97574e-16, 4.15924e-24, 4.15924e-24, 1.19249e-08, 1, -6.97574e-16, -1, 1.19249e-08, 2.08165e-12, 50, 2.08165e-12)
+light_color = Color(0, 0.705882, 0.835294, 1)
+
+[node name="top" parent="." instance=ExtResource("1_cxrqm")]
+normal = Vector3(2.08165e-12, 1, 2.08165e-12)
+transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 50, 2.08165e-12)
+
+[node name="bottom" parent="." instance=ExtResource("1_cxrqm")]
+normal = Vector3(2.08165e-12, -1, 2.08165e-12)
+transform = Transform3D(-4.37114e-08, -1, 3.48787e-16, 1, -4.37114e-08, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, 2.08165e-12, -50, 2.08165e-12)
+
+[node name="left" parent="." instance=ExtResource("1_cxrqm")]
+normal = Vector3(-1, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 2.08165e-12, 2.08165e-12)
+
+[node name="right" parent="." instance=ExtResource("1_cxrqm")]
+normal = Vector3(1, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 2.08165e-12, 2.08165e-12)
+
+[node name="front" parent="." instance=ExtResource("1_cxrqm")]
+normal = Vector3(2.08165e-12, 2.08165e-12, -1)
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 2.08165e-12, 2.08165e-12, 50)
+visible = false
+
+[node name="back" parent="." instance=ExtResource("1_cxrqm")]
+normal = Vector3(2.08165e-12, 2.08165e-12, 1)
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 2.08165e-12, 2.08165e-12, -50)

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4y6w6bhvjmn6"]
+
+[ext_resource type="Texture2D" uid="uid://doqb8b2u4tqo2" path="res://textures/wood_floor_deck_disp_4k.png" id="1_7em5v"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8rgqe"]
+size = Vector3(10, 100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t23us"]
+albedo_texture = ExtResource("1_7em5v")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hlqkb"]
+size = Vector3(10, 100, 100)
+
+[node name="Wall" type="Wall"]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+mesh = SubResource("BoxMesh_8rgqe")
+material = SubResource("StandardMaterial3D_t23us")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_hlqkb")

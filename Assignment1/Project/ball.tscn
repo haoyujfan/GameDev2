@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://lj3w3wx7g41g"]
+
+[ext_resource type="Texture2D" uid="uid://c8f2s58w72oa6" path="res://textures/patterned_brick_floor_disp_4k.png" id="1_ueeq7"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_gmrv5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5orr"]
+albedo_texture = ExtResource("1_ueeq7")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ms42v"]
+
+[node name="Ball" type="Ball"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47382e-09, 1.47382e-09, 1.47382e-09)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("SphereMesh_gmrv5")
+material = SubResource("StandardMaterial3D_e5orr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("SphereShape3D_ms42v")
